@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>CollegeBuds is a website to help you connect to students of your college, and of other colleges.</h1>
+    <br>
+
+    <h3>Register here:</h3>
+    {{ message }}
+    <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+
+        <div class="form-group">
+            <input class="form-control" name="name" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" type="password" id="pass" name="password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Login</button>
+        </div>
+
+    </form>
+
+    Already have an account? 
+    <a href="{{ url_for('login') }}">
+        Login here.
+    </a>
+{% endblock %}
